@@ -16,7 +16,7 @@ public class Main extends JFrame{
     private final double FAHRENHEIT_TO_CENTIGRADE = 32;
 
     //Conponents
-    private JPanel paneGridlMain;
+    private JPanel panelGridlMain;
     private JTextField textFieldMile;
     private JTextField textFieldKilometer;
     private JTextField textFieldPound;
@@ -29,7 +29,7 @@ public class Main extends JFrame{
 
     //altered constructor
     public Main() {
-        setContentPane(paneGridlMain);
+        setContentPane(panelGridlMain);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle(MAIN_LABEL);
@@ -46,7 +46,8 @@ public class Main extends JFrame{
         new Main();
     }
 
-    private void startUp(){
+    //start up
+    public void startUp(){
         JTextField[] textLeft = {textFieldMile,textFieldPound, textFieldGallon, textFieldFahrenheit};
         JTextField[] textRight = {textFieldKilometer, textFieldKilogram,textFieldLiter,TextFieldCentigrade};
 
@@ -62,7 +63,7 @@ public class Main extends JFrame{
 
 
     //function click
-    private void buttonConversion_Click(){
+    public void buttonConversion_Click(){
         try{
             textFieldKilometer.setText(STR."\{convertMileToKilometer(textFieldMile.getText())}");
             textFieldKilogram.setText(STR."\{convertPoundToKilogram(textFieldPound.getText())}");
@@ -73,7 +74,7 @@ public class Main extends JFrame{
             JOptionPane.showMessageDialog(null, e.toString(), e.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    //functionalities method
     private double convertMileToKilometer(String mile) {
         if(mile != null || mile.length() != 0 || mile.equals("0")){
             return Double.parseDouble(mile) * MILE_TO_KILOMETER;
