@@ -33,9 +33,9 @@ public class Main extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle(MAIN_LABEL);
+        setSize(700,400);
         setLocationRelativeTo(null);
         startUp();
-        setSize(700,400);
 //        setSize();
         //Action Listener Click
         buttonConversion.addActionListener(e -> {
@@ -70,7 +70,7 @@ public class Main extends JFrame{
             TextFieldCentigrade.setText(STR."\{convertFahrenheitToCentigrade(textFieldFahrenheit.getText())}");
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(Main.this, STR."\{e.getMessage()}");
+            JOptionPane.showMessageDialog(null, e.toString(), e.getClass().getSimpleName(), JOptionPane.ERROR_MESSAGE);
         }
     }
 
