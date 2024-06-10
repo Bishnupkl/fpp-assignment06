@@ -25,6 +25,8 @@ public class Main extends JFrame{
         setTitle(MAIN_LABEL);
         setSize(700,200);
         setLocationRelativeTo(null);
+        startUp();
+        setResizable(false);
 //        setSize();
         //Action Listener Click
         buttonCountLetter.addActionListener(e -> {
@@ -35,8 +37,10 @@ public class Main extends JFrame{
         });
         buttonRemoveDuplicate.addActionListener(e -> {
             textFieldOutput.setText(STR."\{removeDuplicates(textFieldInput.getText())}");
-
         });
+    }
+    public void startUp(){
+        textFieldOutput.setEditable(false);
     }
 
     public String counterLetters(String str){

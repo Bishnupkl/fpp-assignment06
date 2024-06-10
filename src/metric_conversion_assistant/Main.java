@@ -33,8 +33,9 @@ public class Main extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle(MAIN_LABEL);
-        setSize(700,400);
+        setSize(700,250);
         setLocationRelativeTo(null);
+        setResizable(false);
         startUp();
 //        setSize();
         //Action Listener Click
